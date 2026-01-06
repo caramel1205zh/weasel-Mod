@@ -49,7 +49,7 @@ update_changelog() {
   local new_tag=$1
   local old_tag=$2
   local commits
-  commits=$(git log "$old_tag..HEAD" --pretty=format:"%s ([%an](https://github.com/rime/weasel/commit/%H))")
+  commits=$(git log "$old_tag..HEAD" --pretty=format:"%s ([%an](https://github.com/caramel1205zh/weasel-Mod/commit/%H))")
 
   declare -A groupedCommits
   declare -A groupedTitle
@@ -95,7 +95,7 @@ update_changelog() {
   fileContent=$(<CHANGELOG.md)
   local contentAdd
   contentAdd="<a name=\"$new_tag\"></a>"$'\n'
-  contentAdd+="## [$new_tag](https://github.com/rime/weasel/compare/$old_tag...$new_tag)($currentDateTime)"$'\n'
+  contentAdd+="## [$new_tag](https://github.com/caramel1205zh/weasel-Mod/compare/$old_tag...$new_tag)($currentDateTime)"$'\n'
   # if $new_tag.txt exists, add the content to changelog
   if [[ -f "$new_tag.txt" ]]; then
     contentAdd+=$'\n'

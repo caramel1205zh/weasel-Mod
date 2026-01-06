@@ -50,7 +50,7 @@ function parse_new_version {
 # update change log, work like clog-cli
 function update_changelog {
   param( [string]$new_tag, [string]$old_tag)
-  $commits = git log "$old_tag..HEAD" --pretty=format:"%s ([%an](https://github.com/rime/weasel/commit/%H))";
+  $commits = git log "$old_tag..HEAD" --pretty=format:"%s ([%an](https://github.com/caramel1205zh/weasel-Mod/commit/%H))";
   # group commit logs
   $groupedCommits = @{
     build = @(); ci = @(); fix = @(); feat = @(); docs = @(); style = @();
@@ -89,7 +89,7 @@ function update_changelog {
   $currentDateTime = Get-Date -Format "yyyy-MM-dd";
   $fileContent = Get-Content -Path "CHANGELOG.md" -Raw -Encoding UTF8;
   $contentAdd = "<a name=`"$new_tag`"></a>`n" ;
-  $contentAdd += "## [$new_tag](https://github.com/rime/weasel/compare/$old_tag...$new_tag)($currentDateTime)`n" ;
+  $contentAdd += "## [$new_tag](https://github.com/caramel1205zh/weasel-Mod/compare/$old_tag...$new_tag)($currentDateTime)`n" ;
   # if $new_tag.txt exists, add the content to changelog
   $new_tag_file = "$new_tag.txt";
   if (Test-Path -Path $new_tag_file) {
